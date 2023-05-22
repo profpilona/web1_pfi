@@ -16,7 +16,7 @@ http.createServer((requete, reponse)=>{
         traiterFormulaire(requete, reponse);
     } else {
         if (requete.url === '/') {
-            let nomFichier = path.join(__dirname, 'pagesWeb', 'index.html');
+            let nomFichier = path.join(__dirname, 'pagesWeb', 'login.html');
             fournirPagesWeb(nomFichier, reponse, null);
         } else if (requete.url === '/login.html' || requete.url === '/login_get.html') {
             let nomFichier = path.join(__dirname, 'pagesWeb', requete.url);

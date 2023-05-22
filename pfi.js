@@ -8,14 +8,17 @@ const path = require('path');
 const fs = require('fs');
 const url= require('url');
 const liste_usagers = require('./liste_usagers');
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 http.createServer((requete, reponse)=>{
     // afficher la page Web demandée???
     if (requete.url.substring(0, 17) === '/traite_form.html') {
         traiterFormulaire(requete, reponse);
     } else {
-        if (requete.url === '/login.html' || requete.url === '/login_get.html') {
+        if (requete.url === '/') {
+            let nomFichier = path.join(__dirname, 'pagesWeb', 'index.html');
+            fournirPagesWeb(nomFichier, reponse, null);
+        } else if (requete.url === '/login.html' || requete.url === '/login_get.html') {
             let nomFichier = path.join(__dirname, 'pagesWeb', requete.url);
             fournirPagesWeb(nomFichier, reponse, null);
         } else {

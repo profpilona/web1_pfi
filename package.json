@@ -1,0 +1,16 @@
+{
+  "name": "pfi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pfi.js",
+  "scripts": {
+    "dev": "nodemon pfi",
+    "start": "node pfi"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
